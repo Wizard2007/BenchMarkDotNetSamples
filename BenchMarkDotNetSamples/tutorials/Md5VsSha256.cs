@@ -5,6 +5,8 @@ using BenchmarkDotNet.Running;
 
 namespace BenchMarkDotNetSamples.tutorials
 {
+    [MemoryDiagnoser]
+    [MarkdownExporter, AsciiDocExporter, HtmlExporter, CsvExporter, RPlotExporter]
     public class Md5VsSha256
     {
         private const int N = 10000;
