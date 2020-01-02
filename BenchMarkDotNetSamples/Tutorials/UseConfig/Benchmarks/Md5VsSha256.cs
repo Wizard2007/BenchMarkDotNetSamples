@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Security.Cryptography;
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Running;
 
-namespace BenchMarkDotNetSamples.tutorials
+namespace BenchMarkDotNetSamples.Tutorials.UseConfig.Benchmarks
 {
     [MemoryDiagnoser]
     [MarkdownExporter, AsciiDocExporter, HtmlExporter, CsvExporter, RPlotExporter]
@@ -26,13 +25,5 @@ namespace BenchMarkDotNetSamples.tutorials
 
         [Benchmark]
         public byte[] Md5() => md5.ComputeHash(data);
-    }
-
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var summary = BenchmarkRunner.Run<Md5VsSha256>();
-        }
     }
 }
